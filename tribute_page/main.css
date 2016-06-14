@@ -1,0 +1,109 @@
+@import url("../reset.css");
+
+body {
+  font: normal 20px Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: blue;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #23527c;
+  text-decoration: underline;
+}
+
+main {
+  border-radius: 10px;
+  background: #C0C0C0;
+  width: 80%;
+  margin: 40px auto 0 auto;
+}
+
+header, footer {
+  text-align: center;
+}
+
+header h1 {
+  font-size: 58px;
+  padding: 40px 0 20px 0;
+}
+
+header p {
+  font-size: 30px;
+  font-style: italic;
+  margin: 0 0 5px 0;
+}
+
+header figure {
+  margin: 0 50px;
+  background: white;  
+  border: 1px solid gray;
+}
+
+header figure img {
+  width: 99%;
+}
+
+header figure figcaption {
+  font-size: 14px;
+  margin: 8px 0;
+}
+
+#content {
+  width: 53%;
+  margin: 40px auto 0 auto;
+  padding-bottom: 40px;
+}
+
+#content .main-content h2 {
+  font-size: 26px;
+  margin: 0 0 10px 0;
+}
+
+#content .main-content ul {
+  list-style: disc;
+  font-size: 14px;
+  padding: 0 0 0 45px;
+}
+
+#content .main-content ul li {
+  padding: 0 0 5px 0;
+}
+
+#content .main-content ul li strong {
+  font-weight: bold;
+}
+
+.quote blockquote {
+  padding: 20px 0 0 30px;
+}
+
+.quote blockquote p {
+  padding: 0 0 15px 0;
+}
+
+.quote blockquote cite {
+  font-style: italic;
+  font-size: 14px;
+}
+
+.quote blockquote cite:before {
+  content: "\2014 \00A0";
+}
+
+.extra-info {
+  margin: 25px 0 10px 0;
+}
+
+footer {
+  width: 80%;
+  margin: 30px auto 20px auto;
+}
+
+footer p {
+  padding: 18px 0 0 0;
+  border-top: 1px solid gray;
+  font-size: 14px;
+}

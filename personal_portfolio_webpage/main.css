@@ -1,0 +1,294 @@
+@import url("../reset.css");
+
+body {
+  font: normal 20px Helvetica, Arial, sans-serif;
+  background: #888;
+}
+
+/*
+  Fixed Header
+*/
+
+.fixed {
+  right: 0;
+  left: 0;
+  z-index: 1;
+  position: fixed;
+  background: #722872;
+}
+
+.fixed nav {
+  width: 70%;
+  margin: 0 auto;
+  padding: 10px 0;
+}
+
+.logo, .extra-links {
+  display: inline-block;
+}
+
+.extra-links {
+  float: right;
+  padding: 18px 0 0 0;
+}
+
+.extra-links a {
+  text-decoration: none;
+  color: #888;
+  padding: 5px 10px;
+}
+
+.logo img {
+  width: 40px;
+}
+
+/* 
+  Main Content
+*/
+
+/*
+  CSS for article with the .about class
+*/
+
+main {
+  position: relative;
+  width: 75%;
+  top: 68px;
+  margin: 0 auto;
+}
+
+.about {
+  padding: 80px 60px 60px 60px;
+  overflow: hidden;
+  color: white;
+  background: #aaa;
+}
+
+.about .float-left div {
+  margin: 30px 0 30px 60px;
+  width: 80%;
+  border-top: 5px solid white;
+}
+
+.about .float-left {
+  display: inline-block;
+  width: 70%;
+  float: left;
+}
+
+.about .float-left p {
+  line-height: 150%;
+}
+
+.about .float-left h2 {
+  font-size: 23px;
+}
+
+.about .float-right {
+  width: 30%;
+  display: inline-block;
+  float: right;
+}
+
+.about .float-right img {
+  border-radius: 100%;
+  width: 90%;
+}
+
+/*
+  CSS for article with .portfolio class
+*/
+
+.portfolio {
+  background: rgb(238, 238, 238);
+  padding: 60px 60px 60px 60px;  
+  border-bottom: 1px solid #888;  
+}
+
+.portfolio header h2 {
+  text-align: center;
+  color: #888;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.portfolio header div {
+  margin: 30px auto;
+  width: 60%;
+  border-top: 5px solid #888;
+}
+
+.images {
+  padding: 0 0 40px 0;
+}
+
+.portfolio .images ul {
+  display: inline-block;
+}
+
+.portfolio .images li {
+  display: inline-block;
+  width: 48%;
+  height: 350px;
+}
+
+.portfolio .images li:nth-child(2n+1) {
+  float: left;
+}
+
+.portfolio .images li:nth-child(2n) {
+  float: right;
+}
+
+.portfolio .images img {
+  width: 100%;
+}
+
+/*
+  CSS for article with .contact class
+*/
+
+.contact {
+  overflow: hidden;
+  background: rgb(238, 238, 238);
+  padding: 60px 60px 40px 60px;  
+}
+
+.contact header h2 {
+  text-align: center;
+  color: #888;
+  font-size: 30px;
+  font-weight: bold;  
+}
+
+.contact header div {
+  margin: 30px auto;
+  width: 60%;
+  border-top: 5px solid #888;
+}
+
+.contact .form {
+  width: 48%;
+  float: left;
+}
+
+.contact .form form input, 
+.contact .form form textarea {
+  border: none;
+  width: 90%;
+  font-size: 28px;
+  margin-bottom: 30px;
+  padding-bottom: 16px;
+  background: rgb(238, 238, 238);
+  border-bottom: 1px solid #888;
+}
+
+.contact .form form textarea {
+  resize: none;
+}
+
+.contact .form form input:focus, 
+.contact .form form textarea:focus {
+  padding-bottom: 16px;
+  outline: none;
+}
+
+.contact .form input[type="submit"] {
+  font-size: 20px;
+  color: #888;
+}
+
+.contact .form input[type="submit"]:hover {
+  cursor: pointer;
+}
+
+.contact .info {
+  width: 43%;
+  float: right;
+}
+
+.contact .info p {
+  color: #888;
+}
+
+.contact .info .message p {
+  margin-bottom: 30px;
+}
+
+.contact .info .note p {
+  padding-top: 220px;
+}
+
+/*
+  CSS for footer with .above class
+*/
+
+.above {
+  overflow: hidden;
+  position: relative;
+  top: 68px;
+  background: #aaa;
+  padding: 80px 300px 60px 300px;
+}
+
+.above h2, p {
+  color: white;
+}
+
+.above h2 {
+  font-weight: bold;
+  font-size: 24px;
+  padding-bottom: 30px;
+}
+
+.above .about-page {
+  float: left;
+  text-align: center;
+}
+
+.above .about-page img {
+  width: 30px;
+  margin-bottom: -5px;
+}
+
+.above .about-page a {
+  text-decoration: none;
+}
+
+.above .social-links {
+  text-align: center;
+  float: right;
+}
+
+.above .social-links li {
+  display: inline-block;
+}
+
+.above .social-links a {
+  padding: 10px;
+  border-radius: 100%;
+  border: 2px solid white;
+}
+
+.above .social-links img {
+  width: 20px;
+}
+
+.above .social-links a:hover {
+  background: white;
+}
+
+/*
+  CSS for footer with .below class
+*/
+
+.below {
+  position: relative;
+  top: 68px;
+  background: #722872;
+  padding: 30px 0;
+}
+
+.below .copyright {
+  text-align: center;
+}
