@@ -1,0 +1,72 @@
+@import url('../reset.css');
+
+body {
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: 100% 100%;
+  text-align: center;
+  color: #16261f;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+#container {
+  width: 400px;
+  margin: 100px auto 0 auto;
+}
+
+#container a {
+  display: inline-block;
+  margin: 20px 0 0 0;
+  text-decoration: none;
+  color: #16261f;
+}
+
+h1 {
+  font-size: 40px;
+}
+
+#content {
+  overflow: hidden;
+}
+
+#content div:nth-child(n + 2) {
+  background: white;
+  border-radius: 4px;
+  opacity: 0.6;
+  padding: 10px;
+}
+
+#temp p,
+#temp button {
+  display: inline-block;
+  vertical-align: top;
+  margin: 30px 0 0 0;
+  font-size: 40px;
+}
+
+#temp button {
+  margin: 40px 0 0 10px;
+  font-size: 16px;
+  background: #bec5e2;
+}
+
+#temp img {
+  width: 100px;
+  height: 100px;
+}
+
+#city, 
+#condition {
+  width: 40%;
+  display: inline-block;
+}
+
+#city {
+  float: left;
+}
+
+#condition {
+  float: right;
+}
