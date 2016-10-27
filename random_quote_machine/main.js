@@ -10,7 +10,6 @@ function makeHexColor() {
 }
 
 $(function() {
-  
   function setColor() {
     var color = makeHexColor();
     
