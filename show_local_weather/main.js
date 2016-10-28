@@ -39,7 +39,7 @@ function outputData(weather) {
   $('#condition p').text(weather.description);
 }
 
-function generateWeater() {
+function generateWeather() {
   navigator.geolocation.getCurrentPosition(function(position) {
     var lat = position.coords.latitude,
         long = position.coords.longitude,
@@ -72,7 +72,7 @@ function outputNewTemp() {
 }
 
 $(function() {
-  generateWeater();
+  generateWeather();
   
   $('#temp button').on('click', function() {
     outputNewTemp();
