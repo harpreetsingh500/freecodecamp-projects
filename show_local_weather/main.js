@@ -26,7 +26,13 @@ function getData(url) {
 }
 
 function outputData(weather) {
-  $('body').css('background-image', 'url(images/' + weather.condition + '.jpg)');
+  if (weather.icon.match(/n$/)) {
+    $('body').css('background-image', 'url(images/night-sky.jpg)');
+    $('#container a').css('color', 'white');
+  } else {
+    $('body').css('background-image', 'url(images/' + weather.condition + '.jpg)');
+  }
+  
   $('#temp img').prop('src', 'https://openweathermap.org/img/w/' + weather.icon + '.png');
   $('#temp p').text(weather.temp + ' F');
   $('#city p').text('City: ' + weather.city);
