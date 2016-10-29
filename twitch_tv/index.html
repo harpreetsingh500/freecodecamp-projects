@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <title>Twitch TV Viewer</title>
+    <meta charset="UTF-8" />
+    <link rel='stylesheet' href='main.css'>    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.js"></script>    
+    <script src="main.js"></script>
+  </head>
+  
+  <body>
+    <div id='container'>
+      <div id='top-streams'>
+        <h2>Click here for top live streams</h2>
+      </div>
+      <div id='twitch-streamers'>
+        <h2>Twitch Streamers</h2>
+        <nav>
+          <ul>
+            <li><a href='' id='all' class='highlight'>All</a></li>
+            <li><a href='' id='online'>Online</a></li>
+            <li><a href='' id='offline'>Offline</a></li>            
+          </ul>
+        </nav>
+        <div id='streams'></div>
+      </div>
+    </div>
+    
+    <script id='live-streams' type='text/x-handlebars'>
+      <div class='stream'>
+        <p>{{title}}</p>
+        <a href={{streamLink}} target='_blank'>
+          <img src={{imgLink}}>
+        </a>
+        <p>Streamer: {{name}}</p>
+        <p>Game: {{game}}</p>
+        <p>Viewers: {{viewers}}</p>
+      </div>
+    </script>
+    
+    <script id='all-streams' type='text/x-handlebars'>
+      <div class='stream-container'>
+        <img src={{logo}}>
+        <p>Streamer: <a href={{link}} target='_blank'>{{name}}</a></p>
+        <p>Status: {{title}}</p>
+      </div>
+    </script>
+  </body>
+</html>
