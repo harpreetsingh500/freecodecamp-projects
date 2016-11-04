@@ -1,0 +1,68 @@
+@import url('../reset.css');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: #5f6570;
+}
+
+#container {
+  width: 345px;
+  margin: 100px auto 0 auto;
+}
+
+#calculator {
+  text-align: center;
+  padding: 20px;
+  background: #434649;
+  border-radius: 8px;
+}
+
+#display {
+  background: #23262b;
+  margin: 0 auto;
+  overflow: hidden;
+  min-height: 100px;
+  padding: 60px 0 0 0;
+}
+
+#display p {
+  margin: 0;
+  color: white;
+  font-size: 40px;
+  text-align: right;
+}
+
+#buttons {
+  overflow: hidden;
+  height: 250px;
+}
+
+#buttons button {
+  width: 25%;
+  height: 50px;
+  float: left;
+  font-size: 28px;
+}
+
+#buttons button[value='='] {
+  height: 100px;
+}
+
+#buttons button[value='0'], 
+#buttons button[value='.'] {
+  position: relative;
+  top: -50px;
+}
+
+#buttons button[value='0'] {
+  width: 50%;
+}
+
+.operator, 
+button[value='='] {
+  color: white;
+  background: #e86f19;
+}
