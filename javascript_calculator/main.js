@@ -101,7 +101,7 @@ $(function() {
   
   $equal.on('click', function() {
     if (operation.length > 2 ) {
-      answer = calculate(operation);
+      answer = calculate(operation) || '';
     }
     showInput(operation);
   });
