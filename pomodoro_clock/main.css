@@ -1,0 +1,72 @@
+@import url('../reset.css');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: #343942;
+}
+
+#container {
+  width: 400px;
+  margin: 100px auto 0 auto;
+  text-align: center;
+  color: white;
+}
+
+#break,
+#session {
+  display: inline-block;
+  font-size: 24px;
+}
+
+#break {
+  margin: 0 40px 0 0;
+}
+
+button {
+  font-size: 24px;
+  background: none;
+  border: none;
+  outline: none;
+  color: white;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+#background-color,
+#color-timer,
+#content {
+  width: 300px;
+  height: 300px;
+  position: relative;
+  border-radius: 50%;
+}
+
+#background-color {
+  margin: 30px auto 0 auto;
+  font-size: 50px;
+  background: #99CC00;
+  z-index: 1;
+}
+
+#color-timer {
+  background: #343942;
+  z-index: 2;
+  top: -300px;
+  border-radius: 0;
+}
+
+#content {
+  border: 2px solid #99CC00;
+  padding: 50px 0 0 0;
+  z-index: 3;
+  cursor: pointer;
+}
+
+#time-type {
+  margin: 0 0 100px 0;
+}
