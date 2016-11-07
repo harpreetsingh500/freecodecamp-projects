@@ -75,8 +75,8 @@ $(function() {
     }
     
     $('#show-winner').text(text)
-                    .show()
-                    .fadeOut(3000);
+                     .show()
+                     .fadeOut(3000);
   }
  
   function resetBoard() {
@@ -110,28 +110,24 @@ $(function() {
  
   function computerTurn() {
     var grid,
-        index,
         id,
         length = availableGrids.length;
     
     if (availableGrids.includes(5)) {
-      grid = $("[data-id='5']");
-      putSymbolOnBoard(grid, 5);
+      id = 5;
     } else {
       id = computerOffense();
       
-      if (id === undefined) {
-        id = computerDefense();
-      }
+      if (id === undefined) { id = computerDefense(); }
       
       if (id === undefined) {
-        index = Math.floor(Math.random() * length);
+        var index = Math.floor(Math.random() * length);
         id = availableGrids[index];
       }
-      
-      grid = $('[data-id=' + id + ']');
-      putSymbolOnBoard(grid, id);
     }
+    
+    grid = $('[data-id=' + id + ']');
+    putSymbolOnBoard(grid, id);
   }
   
   function computerOffense() {
@@ -152,9 +148,7 @@ $(function() {
         return line.includes(+$(ele).data('id')) && $(ele).text() === player.symbol;
       }).length;
       
-      if (length === 2) {
-        id = getAvailableGrid(line) || id;
-      }
+      if (length === 2) { id = getAvailableGrid(line) || id; }
     });
     
     return id;
@@ -185,10 +179,9 @@ $(function() {
   
   var winningLines = [[1, 2, 3], [1, 4, 7], [1, 5, 9],
                       [2, 5, 8], [3, 6, 9], [3, 5, 7],
-                      [4, 5, 6], [7, 8, 9]];
-  var availableGrids = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-  
-  var $startScreen = $('#start-screen'),
+                      [4, 5, 6], [7, 8, 9]],
+      availableGrids = [1, 2, 3, 4, 5, 6, 7, 8, 9],
+      $startScreen = $('#start-screen'),
       $selectPlayers = $('#select-players'),
       $selectSymbol = $('#select-symbol'),
       $playerButtons = $selectPlayers.find('button'),
