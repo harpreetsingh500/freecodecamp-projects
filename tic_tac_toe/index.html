@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <title></title>
+    <meta charset="UTF-8" />
+    <link rel='stylesheet' href='main.css'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="main.js"></script>
+  </head>
+  
+  <body>
+    <div id='container'>
+      <h1>Tic Tac Toe</h1>
+      <div id='start-screen'>
+        <div id='select-players'>
+          <p>Pick one.</p>
+          <button value='one-player'>One Player</button>
+          <button value='two-player'>Two Player</button>
+        </div>
+        <div id='select-symbol'>
+          <p>Player 1: Pick X or O.</p>
+          <button value='X'>X</button>
+          <button value='O'>O</button>
+        </div>
+      </div>
+      <div id='game-screen'>
+        <button id='reset'>Reset Game</button>
+        <div id='board'>
+          <div data-id='1'></div>
+          <div data-id='2'></div>
+          <div data-id='3'></div>
+          <div data-id='4'></div>
+          <div data-id='5'></div>
+          <div data-id='6'></div>
+          <div data-id='7'></div>
+          <div data-id='8'></div>
+          <div data-id='9'></div>
+        </div>
+        <div id='show-winner'></div>
+        <div id='score-tab'>
+          <ul>
+            <li>
+              <p id='player-one'><span class='name'></span> <span class='symbol'></span></p>
+              <p data-score='player-one'></p>
+            </li>
+            <li>
+              <p id='tie'>Ties</p>
+              <p data-score='tie'></p>
+            </li>
+            <li>
+              <p id='player-two'><span class='name'></span> <span class='symbol'></span></p>
+              <p data-score='player-two'></p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
