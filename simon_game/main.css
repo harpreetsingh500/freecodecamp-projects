@@ -1,0 +1,160 @@
+@import url('../reset.css');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: #334056;
+  text-align: center;
+  font-size: 14px;
+}
+
+button {
+  cursor: pointer;
+  outline: none;
+}
+
+h2 {
+  font-size: 40px;
+  font-weight: 40px;
+  margin: 0 0 5px 0;
+}
+
+#container {
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: #32383a;
+  margin: 70px auto 0 auto;
+  position: relative;
+}
+
+.game-button {
+  width: 220px;
+  height: 220px;
+  display: inline-block;
+  opacity: .3;
+  user-select: none;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+#green {
+  background: green;
+  border-top-left-radius: 100%;
+  margin: 23px 12px 10px 0;
+}
+
+#red {
+  background: red;
+  border-top-right-radius: 100%;
+  margin: 0 0 10px 0;
+}
+
+#yellow {
+  background: yellow;
+  border-bottom-left-radius: 100%;
+}
+
+#blue {
+  background: blue;
+  border-bottom-right-radius: 100%;
+  margin: 0 0 0 10px;
+}
+
+#game-control {
+  position: absolute;
+  top: 132px;
+  left: 132px;
+  width: 230px;
+  height: 230px;
+  padding: 20px 5px 20px 5px;
+  background: #ccd3e0;
+  border: 12px solid #32383a;
+  border-radius: 100%;
+}
+
+#score-count {
+  width: 60px;
+  height: 40px;
+  padding: 7px;
+  font-size: 24px;
+  background: #3a2235;
+  border-radius: 8px;
+  color: red;
+}
+
+#start,
+#strict {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: red;
+  border: 3px solid #32383a;
+}
+
+#strict {
+  background: yellow;
+}
+
+#start:active,
+#strict:active {
+  width: 28px;
+  height: 28px
+}
+
+.strict-light {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  position: absolute;
+  top: 62px;
+  left: 152px;
+  background: #32383a;
+}
+
+.strict-on {
+  background: #00ff19;
+}
+
+#off-on {
+  width: 40px;
+  height: 20px;
+  padding: 1px 2px;
+  background: #32383a;
+  border: none;
+  border-radius: 4px;
+}
+
+.slider {
+  width: 15px;
+  height: 16px;
+  margin: -1px 0 0 0;
+  background: #7bc7e0;
+  border-radius: 4px;
+  float: left;
+}
+
+.on {
+  float: right;
+}
+
+#game-control li {
+  list-style-type: none;
+  display: inline-block;
+}
+
+li p {
+  margin: 10px 0 0 0;
+}
+
+li:last-child {
+  margin: 10px 0 0 0;
+}
+
+li:last-child p {
+  display: inline-block;
+}
