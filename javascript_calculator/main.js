@@ -1,68 +1,69 @@
-function checkInput(operation, value) {
+function checkInput(inputs, value) {
   var operators = ['-', '+', 'x', '/'],
-      length = operation.length,
-      lastVal = operation[length - 1];
-  
+      length = inputs.length,
+      lastVal = inputs[length - 1];
+
   if (checkNum(value)) { return true; }
   if (operators.includes(lastVal) || length === 0) { return false; }
   return true;
 }
 
-function addInput(val, operation, ans) {
-  var length = operation.length,
+function addInput(val, inputs, ans) {
+  var length = inputs.length,
       lastIndex = length - 1;
-  
-  if (length !== 0 && ans === '' && checkNum(val) && checkNum(operation[lastIndex])) {
-    if (countPeriods(operation[lastIndex]) < 1 || val !== '.') { 
-      operation[lastIndex] += val; 
+
+  if (length !== 0 && ans === '' && checkNum(val) && checkNum(inputs[lastIndex])) {
+    if (countPeriods(inputs[lastIndex]) < 1 || val !== '.') {
+      inputs[lastIndex] += val;
     }
   } else if (ans !== '' && checkNum(val)) {
-    operation[0] = val;
+    inputs[0] = val;
   } else {
-    operation.push(val);
+    inputs.push(val);
   }
 }
 
-function countPeriods(operation) {
-  return operation.split('').filter(function(value) {
+function countPeriods(inputs) {
+  return inputs.split('').filter(function(value) {
     return value === '.';
-    }).length;
+  }).length;
 }
 
 function checkNum(val) {
-  return val.match(/[0-9.]/);
+  return (val).toString().match(/[0-9.]/);
 }
 
-function calculate(operation) {
+function calculate(inputs) {
   var operators = ['-', '+', 'x', '/'],
-      lastVal = operation[operation.length - 1];
-  
+      lastVal = inputs[inputs.length - 1];
+
   if (!operators.includes(lastVal)) {
-    while (operation.length !== 1) {
-      if (operation.includes('x') || operation.includes('/')) {
-        var multiplyIndex = getIndex(operation, 'x'),
-            divideIndex = getIndex(operation, '/'),
+    while (inputs.length !== 1) {
+      if (inputs.includes('x') || inputs.includes('/')) {
+        var multiplyIndex = getIndex(inputs, 'x'),
+            divideIndex = getIndex(inputs, '/'),
             firstIndex = (multiplyIndex < divideIndex) ? multiplyIndex : divideIndex;
-        
-        performOperation(operation, firstIndex);
+
+        performOperation(inputs, firstIndex);
       } else {
-        performOperation(operation);
+        performOperation(inputs);
       }
     }
   }
+  return inputs[0];
 }
 
-function getIndex(operation, operator) {
-  return (operation.indexOf(operator) === -1) ? Infinity : operation.indexOf(operator);
+function getIndex(inputs, operator) {
+  return (inputs.indexOf(operator) === -1) ? Infinity : inputs.indexOf(operator);
 }
 
-function performOperation(operation, idx = 1) {
-  var num1 = +operation[idx - 1],
-      operator = operation[idx],
-      num2 = +operation[idx + 1],
+function performOperation(inputs, idx = 1) {
+  var num1 = +inputs[idx - 1],
+      operator = inputs[idx],
+      num2 = +inputs[idx + 1],
       total = getTotal(num1, operator, num2);
-      
-  operation.splice((idx - 1), 3, total);
+
+  inputs.splice((idx - 1), 3, total);
 }
 
 function getTotal(num1, operator, num2) {
@@ -77,8 +78,8 @@ function getTotal(num1, operator, num2) {
   }
 }
 
-function showInput(operation) {
-  $('#display p').text(operation.join(' '));
+function showInput(inputs) {
+  $('#display p').text(inputs.join(' '));
 }
 
 $(function() {
@@ -86,32 +87,32 @@ $(function() {
       $ac = $("button[value='ac']"),
       $ce = $("button[value='ce']"),
       $equal = $("button[value='=']"),
-      operation = [],
+      inputs = [],
       answer = '';
-  
+
   $ac.on('click', function() {
-    operation = [];
-    showInput(operation);
+    inputs = [];
+    showInput(inputs);
   });
-  
+
   $ce.on('click', function() {
-    operation.pop();
-    showInput(operation);
+    inputs.pop();
+    showInput(inputs);
   });
-  
+
   $equal.on('click', function() {
-    if (operation.length > 2 ) {
-      answer = calculate(operation) || '';
+    if (inputs.length > 2 ) {
+      answer = calculate(inputs);
     }
-    showInput(operation);
+    showInput(inputs);
   });
-  
+
   $buttons.on('click', function() {
     var val = $(this).val();
-    if (checkInput(operation, val)) {
-      addInput(val, operation, answer);
+    if (checkInput(inputs, val)) {
+      addInput(val, inputs, answer);
       answer = '';
     }
-    showInput(operation);
+    showInput(inputs);
   });
 });

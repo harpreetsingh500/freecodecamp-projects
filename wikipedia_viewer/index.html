@@ -3,12 +3,13 @@
   <head>
     <title>Wikipedia Viewer</title>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel='stylesheet' href='main.css'>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.js"></script>    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.js"></script>
     <script src="main.js"></script>
   </head>
-  
+
   <body>
     <div id='container'>
       <div id='content'>
@@ -20,14 +21,14 @@
         <div id='search-results'></div>
       </div>
     </div>
-    
+
     <script id='post' type='text/x-handlebars'>
       <a href={{link}} class='search-result' target='_blank'>
         <div>
           <h2>{{title}}</h2>
           <p>{{{snippet}}}</p>
         </div>
-      </a>  
+      </a>
     </script>
   </body>
 </html>
