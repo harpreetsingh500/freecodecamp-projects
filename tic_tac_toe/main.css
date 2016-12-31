@@ -37,6 +37,7 @@ h1 {
 #start-screen button {
   cursor: pointer;
   font-size: 20px;
+  margin-bottom: 10px;
 }
 
 #select-symbol {
@@ -52,7 +53,7 @@ h1 {
   position: absolute;
   right: -100px;
   font-size: 20px;
-  top: -53px;
+  top: -49px;
 }
 
 #board {
@@ -95,9 +96,52 @@ h1 {
 #score-tab ul {
   list-style-type: none;
   overflow: hidden;
+  margin: 20px 0;
 }
 
 #score-tab li {
   width: 33.33%;
   float: left;
+}
+
+@media (max-width: 700px) {
+  #reset {
+    right: -10px;
+  }
+}
+
+@media (max-width: 532px) {
+  #start-screen {
+    width: 80%;
+  }
+
+  #reset {
+    left: 50%;
+    top: -93px;
+    margin-left: -64px;
+  }
+
+  h1 {
+    margin-top: 50px;
+  }
+
+  #container {
+    width: 90%;
+  }
+
+  #board div {
+    height: 90px;
+    font-size: 40px;
+    padding: 20px 0 0 0;
+  }
+
+  #score-tab li {
+    margin: 15px 0;
+    text-align: left;
+    width: 100%;
+  }
+
+  #score-tab li p {
+    display: inline-block;
+  }
 }
