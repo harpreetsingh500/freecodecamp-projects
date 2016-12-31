@@ -13,8 +13,8 @@ function weatherType(condition) {
 }
 
 function getData(url) {
-  $.getJSON(url, function(data){
-    var temp = Math.round(data.main.temp * (1.8) - 459.67),
+  $.getJSON(url, function(data) {
+    var temp = (data.main.temp * (1.8) - 459.67).toFixed(2),
         weather = data.weather[0];
 
     weather.city = data.name;
@@ -26,18 +26,30 @@ function getData(url) {
 }
 
 function outputData(weather) {
+  var tempTemplate = Handlebars.compile($("[data-name='temp']").html()),
+      weatherInfoTemplate = Handlebars.compile($("[data-name='weather']").html());
+
+  $('#temp').append(tempTemplate({
+    weatherImage: 'https://openweathermap.org/img/w/' + weather.icon + '.png',
+    temp: weather.temp,
+    unit: 'F',
+    tempAndUnit: Math.round(weather.temp) + ' F'
+  }));
+
+  $('#weather-info').append(weatherInfoTemplate({
+    city: weather.city,
+    condition: weather.description
+  }));
+
+  changeBackground(weather);
+}
+
+function changeBackground(weather) {
   if (weather.icon.match(/n$/)) {
     $('body').css('background-image', 'url(images/night-sky.jpg)');
-    $('#container a').css('color', 'white');
   } else {
     $('body').css('background-image', 'url(images/' + weather.condition + '.jpg)');
   }
-
-  $('#temp img').prop('src', 'https://openweathermap.org/img/w/' + weather.icon + '.png');
-  $('#temp p').text(weather.temp + ' F');
-  $('#temp p').attr('data-temp', weather.temp);
-  $('#city p').text('City: ' + weather.city);
-  $('#condition p').text(weather.description);
 }
 
 function getPosition() {
@@ -57,28 +69,36 @@ function generateURL(lat, long) {
   getData(url);
 }
 
-function outputNewTemp() {
-  var text = $('#temp p').text().split(' '),
-      temp = text[0],
-      tempUnit = text[1],
-      tempUnitName;
+function convertTemp() {
+  var temp = $('#temp p').attr('data-temp'),
+      unit = $('#temp p').attr('data-tempunit'),
+      unitName;
 
-  if (tempUnit === 'F') {
-    temp = (+temp - 32) * (5/9);
-    tempUnit = ' C';
-    tempUnitName = 'Fahrenheit';
+  if (unit === 'F') {
+    temp = ((+temp - 32) * (5/9)).toFixed(2);
+    unit = 'C';
+    unitName = 'Fahrenheit';
   } else {
-    temp = (+temp * 1.8) + 32;
-    tempUnit = ' F';
-    tempUnitName = 'Celsius';
+    temp = ((+temp * 1.8) + 32).toFixed(2);
+    unit = 'F';
+    unitName = 'Celsius';
   }
-  console.log(temp);
-  $('#temp p').text(temp.toString().slice(0, 2) + tempUnit);
-  $('#temp button').text('Convert to ' + tempUnitName);
+
+  outputNewTemp(temp, unit, unitName)
+}
+
+function outputNewTemp(temp, unit, unitName) {
+  $('#temp p').text(Math.round(temp) + ' ' + unit)
+              .attr({
+                'data-temp': temp,
+                'data-tempUnit': unit
+              });
+
+  $('#temp button').text('Convert to ' + unitName);
 }
 
 $(function() {
-  $('#temp button').on('click', outputNewTemp);
+  $('#temp').on('click', 'button', convertTemp);
 
   getPosition();
 });
