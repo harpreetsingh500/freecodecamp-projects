@@ -158,9 +158,9 @@ $(function() {
 
   $gameButton.on('click', function() {
     if ($(this).hasClass('clickable')) {
-      playAudio(this);
       playerInput.push(this);
       if (checkInput(index)) {
+        playAudio(this);
         if (colorSequence.length > (index + 1)) {
           index += 1;
         } else {
