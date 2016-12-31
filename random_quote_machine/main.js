@@ -16,7 +16,6 @@ var App = {
   quoteImage: '<i class="fa fa-quote-left" aria-hidden="true"></i>',
   init: function() {
     this.$quote = $('#quote');
-    this.setColor();
     $('#new-quote').click();
   },
   getQuote: function(event) {
