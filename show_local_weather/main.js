@@ -14,8 +14,9 @@ function weatherType(condition) {
 
 function getData(url) {
   $.getJSON(url, function(data) {
+    data = data.query.results.json
     var temp = (data.main.temp * (1.8) - 459.67).toFixed(2),
-        weather = data.weather[0];
+        weather = data.weather;
 
     weather.city = data.name;
     weather.condition = weatherType(weather.main);
@@ -64,9 +65,10 @@ function getPosition() {
 function generateURL(lat, long) {
   var apiKey = '5fd38ebd20cceeec831fd3af52cfd163',
       params = '?lat=' + lat + '&lon=' + long + '&appid=' + apiKey,
-      url = 'http://api.openweathermap.org/data/2.5/weather' + params;
+      url = 'http://api.openweathermap.org/data/2.5/weather' + params,
+      query = 'https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20json%20where%20url%3D%22' + encodeURIComponent(url) + '%22%0A&format=json&diagnostics=true&callback=';
 
-  getData(url);
+  getData(query);
 }
 
 function convertTemp() {
