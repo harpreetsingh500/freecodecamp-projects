@@ -1,4 +1,4 @@
-@import url('reset.css');
+@import url('../reset.css');
 
 a {
   text-decoration: none;
@@ -7,12 +7,11 @@ a {
 
 #container {
   width: 550px;
-  margin: 100px auto 0 auto;
+  margin: 100px auto 25px auto;
   text-align: center;
 }
 
 #content {
-  width: 550px;
   padding: 40px;
   box-sizing: border-box;
   background: white;
@@ -44,11 +43,11 @@ div .fa {
   opacity: 0.9;
 }
 
-#twitter, 
+#twitter,
 #new-quote {
   border-radius: 4px;
   box-sizing: border-box;
-  height: 38px;  
+  height: 38px;
 }
 
 #twitter {
@@ -64,4 +63,19 @@ div .fa {
 #new-quote {
   float: right;
   padding: 8px 18px 6px 18px;
+}
+
+@media (max-width: 600px) {
+  #container {
+    width: 94%;
+  }
+
+  #content {
+    padding: 20px;
+  }
+
+  #quote i + p,
+  div .fa {
+    font-size: 22px;
+  }
 }
