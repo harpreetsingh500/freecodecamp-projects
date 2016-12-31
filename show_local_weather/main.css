@@ -4,11 +4,14 @@
   box-sizing: border-box;
 }
 
+html {
+  height: 100%;
+}
+
 body {
   background-repeat: no-repeat;
-  background-attachment: fixed;
   background-position: center;
-  background-size: cover;
+  background-size: 100% 100%;
   text-align: center;
   color: #16261f;
   font-size: 18px;
@@ -28,6 +31,10 @@ body {
   margin: 20px 0 0 0;
   text-decoration: none;
   color: #16261f;
+}
+
+#container a + p {
+  margin: 15px 0 0 0;
 }
 
 h1 {
