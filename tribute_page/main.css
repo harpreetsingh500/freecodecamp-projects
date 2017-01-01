@@ -38,7 +38,7 @@ header p {
 
 header figure {
   margin: 0 50px;
-  background: white;  
+  background: white;
   border: 1px solid gray;
 }
 
@@ -106,4 +106,50 @@ footer p {
   padding: 18px 0 0 0;
   border-top: 1px solid gray;
   font-size: 14px;
+}
+
+@media (max-width: 700px) {
+  header h1 {
+    font-size: 28px;
+    padding: 20px 0 20px 0;
+  }
+
+  header p {
+    font-size: 28px;
+  }
+
+  header figure {
+    margin: 0 5px;
+  }
+
+  header figure img {
+    width: 100%;
+  }
+
+  header figure figcaption {
+    font-size: 18px;
+  }
+
+  #content {
+    width: 90%;
+    margin: 25px auto 0 auto;
+    padding-bottom: 25px;
+  }
+
+  #content .main-content h2 {
+    font-size: 20px;
+  }
+
+  #content .main-content ul {
+    padding-left: 15px;
+  }
+
+  .quote blockquote {
+    margin: 10px;
+    padding: 0;
+  }
+
+  footer {
+    width: 90%;
+  }
 }
