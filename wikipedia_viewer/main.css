@@ -14,7 +14,7 @@ a {
 
 #container {
   width: 85%;
-  margin: 200px auto 0 auto;
+  margin: 100px auto 0 auto;
 }
 
 #content p {
@@ -29,7 +29,7 @@ a {
 #search {
   background: none;
   border: 4px solid #d15727;
-  padding: 10px 25px;
+  padding: 10px 20px 10px 11px;
   border-radius: 30px;
   color: white;
   font-size: 16px;
@@ -55,7 +55,7 @@ a {
   content: '';
   background: #d15727;
   display: inline-block;
-  transform: rotate(45deg);  
+  transform: rotate(45deg);
 }
 
 #search-img:after {
@@ -64,13 +64,14 @@ a {
   top: 55px;
   left: 36px;
   width: 30px;
-  height: 4px;  
+  height: 4px;
 }
 
 #close {
-  position: relative;
-  top: -4px;
-  left: -31px;
+  position: absolute;
+  top: 146px;
+  margin-left: 93px;
+  left: 50%;
   display: none;
 }
 
