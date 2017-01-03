@@ -54,17 +54,17 @@ function changeBackground(weather) {
 }
 
 function getPosition() {
-  navigator.geolocation.getCurrentPosition(function(position) {
-    var lat = position.coords.latitude,
-        long = position.coords.longitude;
+  $.getJSON('https://freegeoip.net/json/', function(data) {
+    var lat = data.latitude,
+        lon = data.longitude;
 
-    generateURL(lat, long);
+    generateURL(lat, lon);
   });
 }
 
-function generateURL(lat, long) {
+function generateURL(lat, lon) {
   var apiKey = '5fd38ebd20cceeec831fd3af52cfd163',
-      params = '?lat=' + lat + '&lon=' + long + '&appid=' + apiKey,
+      params = '?lat=' + lat + '&lon=' + lon + '&appid=' + apiKey,
       url = 'http://api.openweathermap.org/data/2.5/weather' + params,
       query = 'https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20json%20where%20url%3D%22' + encodeURIComponent(url) + '%22%0A&format=json&diagnostics=true&callback=';
 

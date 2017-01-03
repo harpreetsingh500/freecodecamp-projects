@@ -33,10 +33,6 @@ body {
   color: #16261f;
 }
 
-#container a + p {
-  margin: 15px 0 0 0;
-}
-
 h1 {
   font-size: 40px;
 }
