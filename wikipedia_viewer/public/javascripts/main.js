@@ -30,7 +30,6 @@ function getData() {
 
 function showData(data) {
   var searchResults = data.query.search,
-      template = Handlebars.compile($('#post').html()),
       wikiPost = {},
       $searchResults = $('#search-results');
 
@@ -39,7 +38,7 @@ function showData(data) {
     wikiPost.snippet = obj.snippet;
     wikiPost.link = 'https://en.wikipedia.org/wiki/' + obj.title.split(' ').join('_');
 
-    $searchResults.append(template(wikiPost));
+    $searchResults.append(JST['post'](wikiPost));
   });
 
   $searchResults.fadeIn(2000);
