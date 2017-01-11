@@ -1,0 +1,21 @@
+{
+  "name": "random_quote_machine",
+  "homepage": "https://github.com/harpreetsingh500/freecodecamp-projects",
+  "authors": [
+    "harpreet singh <harpeetsingh500@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.1.1",
+    "components-font-awesome": "^4.7.0"
+  }
+}
