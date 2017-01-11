@@ -82,7 +82,9 @@ $(function() {
     nextSequence(true);
   }
 
-  function makeButtonClickable(milliseconds = 1500) {
+  function makeButtonClickable(milliseconds) {
+    milliseconds = (milliseconds === undefined) ? 1500 : milliseconds;
+
     setTimeout(function() {
       $gameButton.addClass('clickable');
     }, pause + milliseconds);
