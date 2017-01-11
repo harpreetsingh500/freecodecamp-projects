@@ -57,7 +57,9 @@ function getIndex(inputs, operator) {
   return (inputs.indexOf(operator) === -1) ? Infinity : inputs.indexOf(operator);
 }
 
-function performOperation(inputs, idx = 1) {
+function performOperation(inputs, idx) {
+  idx = (idx === undefined) ? 1 : idx;
+  
   var num1 = +inputs[idx - 1],
       operator = inputs[idx],
       num2 = +inputs[idx + 1],
