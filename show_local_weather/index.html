@@ -4,10 +4,7 @@
     <title>Local Weather</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel='stylesheet' href='main.css'>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.js"></script>
-    <script src="main.js"></script>
+    <link rel='stylesheet' href='public/stylesheets/main.css'>
   </head>
 
   <body>
@@ -19,16 +16,7 @@
       </div>
       <a href='https://github.com/harpreetsingh500'>by harpreetsingh500</a>
     </div>
+
+    <script src='public/javascripts/all.js'></script>
   </body>
-
-  <script data-name='temp' type='text/handlebars'>
-    <img src={{weatherImage}} />
-    <p data-temp={{temp}} data-tempunit={{unit}}>{{tempAndUnit}}</p>
-    <button>Convert to Celsius</button>
-  </script>
-
-  <script data-name='weather' type='text/handlebars'>
-    <p>City: {{city}}</p>
-    <p>Condition: {{condition}}</p>
-  </script>
 </html>

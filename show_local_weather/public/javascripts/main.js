@@ -27,17 +27,14 @@ function getData(url) {
 }
 
 function outputData(weather) {
-  var tempTemplate = Handlebars.compile($("[data-name='temp']").html()),
-      weatherInfoTemplate = Handlebars.compile($("[data-name='weather']").html());
-
-  $('#temp').append(tempTemplate({
+  $('#temp').append(JST['temp']({
     weatherImage: 'https://openweathermap.org/img/w/' + weather.icon + '.png',
     temp: weather.temp,
     unit: 'F',
     tempAndUnit: Math.round(weather.temp) + ' F'
   }));
 
-  $('#weather-info').append(weatherInfoTemplate({
+  $('#weather-info').append(JST['weather']({
     city: weather.city,
     condition: weather.description
   }));
@@ -47,9 +44,9 @@ function outputData(weather) {
 
 function changeBackground(weather) {
   if (weather.icon.match(/n$/)) {
-    $('body').css('background-image', 'url(images/night-sky.jpg)');
+    $('body').css('background-image', 'url(public/images/night-sky.jpg)');
   } else {
-    $('body').css('background-image', 'url(images/' + weather.condition + '.jpg)');
+    $('body').css('background-image', 'url(public/images/' + weather.condition + '.jpg)');
   }
 }
 
