@@ -10,7 +10,6 @@ function getDataForLiveStreams() {
 }
 
 function showDataForLiveStreams(data) {
-  var template = Handlebars.compile($('#live-streams').html());
   var streams = data.streams;
   var streamInfo = {};
 
@@ -22,7 +21,7 @@ function showDataForLiveStreams(data) {
     streamInfo.name = obj.channel.name;
     streamInfo.game = obj.channel.game;
 
-    $('#top-streams').append(template(streamInfo));
+    $('#top-streams').append(JST['live-streams'](streamInfo));
   });
 }
 
@@ -60,8 +59,7 @@ function getLogo(data1) {
 }
 
 function showDataForSpecificStreams(data) {
-  var template = Handlebars.compile($('#all-streams').html());
-  $('#streams').append(template(data));
+  $('#streams').append(JST['all-streams'](data));
 
   if (data.title !== 'offline') {
     $('#streams div:last-child').addClass('online');

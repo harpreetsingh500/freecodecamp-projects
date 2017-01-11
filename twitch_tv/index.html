@@ -4,10 +4,7 @@
     <title>Twitch TV Viewer</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel='stylesheet' href='main.css'>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.js"></script>
-    <script src="main.js"></script>
+    <link rel='stylesheet' href='public/stylesheets/main.css'>
   </head>
 
   <body>
@@ -28,24 +25,6 @@
       </div>
     </div>
 
-    <script id='live-streams' type='text/x-handlebars'>
-      <div class='stream'>
-        <a href={{streamLink}} target='_blank'>
-          <img src={{imgLink}}>
-        </a>
-        <p>Streamer: {{name}}</p>
-        <p>Game: {{game}}</p>
-        <p>Viewers: {{viewers}}</p>
-        <p>Description: {{title}}</p>
-      </div>
-    </script>
-
-    <script id='all-streams' type='text/x-handlebars'>
-      <div class='stream-container'>
-        <img src={{logo}}>
-        <p>Streamer: <a href={{link}} target='_blank'>{{name}}</a></p>
-        <p>Status: {{title}}</p>
-      </div>
-    </script>
+    <script src='public/javascripts/all.js'></script>
   </body>
 </html>
